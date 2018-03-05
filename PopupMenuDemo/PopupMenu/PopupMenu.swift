@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PopupMenuType {
+public enum PopupMenuType {
     case defaultWhite //Default
     case dark
 }
@@ -17,7 +17,7 @@ enum PopupMenuType {
  
  当控件超出屏幕时会自动调整成反方向
  */
-enum PopupMenuPriorityDirection : Int {
+public enum PopupMenuPriorityDirection : Int {
     case top = 0
     case bottom
     case left
@@ -25,7 +25,7 @@ enum PopupMenuPriorityDirection : Int {
     case none //不自动调整
 }
 
-@objc protocol PopupMenuDelegate : NSObjectProtocol {
+@objc public protocol PopupMenuDelegate : NSObjectProtocol {
     /// block回调时 非可选
    @objc  func popupMenuDidSelected(index : NSInteger,popupMenu: PopupMenu)
    @objc optional func popupMenuBeganDismiss()
@@ -34,7 +34,7 @@ enum PopupMenuPriorityDirection : Int {
    @objc optional func popupMenudidShow()
 }
 
-class PopupMenu: UIView {
+public class PopupMenu: UIView {
     
     
     /// 点击选中回调
@@ -43,14 +43,14 @@ class PopupMenu: UIView {
     /**
      圆角半径 Default is 5.0
      */
-    var cornerRadius : CGFloat = 5.0
+    public var cornerRadius : CGFloat = 5.0
     
     /**
      自定义圆角 Default is UIRectCorner.allCorners
      
      当自动调整方向时corner会自动转换至镜像方向
      */
-    var rectCorner : UIRectCorner = UIRectCorner.allCorners{
+    public var rectCorner : UIRectCorner = UIRectCorner.allCorners{
         didSet{
            // updateUI()
         }
@@ -59,7 +59,7 @@ class PopupMenu: UIView {
     /**
      是否显示阴影 Default is YES
      */
-    var isShowShadow : Bool = true{
+    public var isShowShadow : Bool = true{
         didSet{
             layer.shadowOpacity = isShowShadow == true ? 0.5 : 0
             layer.shadowOffset = CGSize.init(width: 0, height: 0)
@@ -70,7 +70,7 @@ class PopupMenu: UIView {
     /**
      是否显示灰色覆盖层 Default is YES
      */
-    var showMaskView : Bool = true{
+    public var showMaskView : Bool = true{
         didSet{
             let blackColor = UIColor.black
             blackColor.withAlphaComponent(0.1)
@@ -81,22 +81,22 @@ class PopupMenu: UIView {
     /**
      选择菜单项后消失 Default is YES
      */
-    var dismissOnSelected : Bool = true
+    public var dismissOnSelected : Bool = true
 
     /**
      点击菜单外消失  Default is YES
      */
-    var dismissOnTouchOutside : Bool = true
+    public var dismissOnTouchOutside : Bool = true
 
     /**
      设置字体大小 Default is 15
      */
-    var fontSize : CGFloat = 15
+    public var fontSize : CGFloat = 15
 
     /**
      设置字体颜色 Default is UIColor.black
      */
-    var textColor : UIColor = UIColor.black{
+    public var textColor : UIColor = UIColor.black{
         didSet{
            // tableView.reloadData()
         }
@@ -105,44 +105,44 @@ class PopupMenu: UIView {
     /**
      设置偏移距离 (>= 0) Default is 0.0
      */
-    var offset : CGFloat = 0.0
+    public var offset : CGFloat = 0.0
     
     /**
      边框宽度 Default is 0.0
      
      设置边框需 > 0
      */
-    var borderWidth : CGFloat = 0.0
+    public var borderWidth : CGFloat = 0.0
 
     /**
      边框颜色 Default is LightGrayColor
      
      borderWidth <= 0 无效
      */
-    var borderColor : UIColor = UIColor.lightGray
+    public var borderColor : UIColor = UIColor.lightGray
  
     /**
      箭头宽度 Default is 15
      */
-    var arrowWidth : CGFloat = 15
+    public var arrowWidth : CGFloat = 15
     
     /**
      箭头高度 Default is 10
      */
-    var arrowHeight : CGFloat = 10
+    public var arrowHeight : CGFloat = 10
 
     /**
      箭头位置 Default is center
      
      只有箭头优先级是YBPopupMenuPriorityDirectionLeft/YBPopupMenuPriorityDirectionRight/YBPopupMenuPriorityDirectionNone时需要设置
      */
-    var arrowPosition : CGFloat = 0
+    public var arrowPosition : CGFloat = 0
     
     
     /**
      箭头方向 Default is YBPopupMenuArrowDirectionTop
      */
-    var arrowDirection : PopupMenuArrowDirection = PopupMenuArrowDirection.top{
+    public var arrowDirection : PopupMenuArrowDirection = PopupMenuArrowDirection.top{
         didSet{
            // updateUI()
         }
@@ -154,7 +154,7 @@ class PopupMenu: UIView {
      
      当控件超出屏幕时会自动调整箭头位置
      */
-    var priorityDirection : PopupMenuPriorityDirection = PopupMenuPriorityDirection.top{
+    public var priorityDirection : PopupMenuPriorityDirection = PopupMenuPriorityDirection.top{
         didSet{
             // updateUI()
         }
@@ -164,19 +164,19 @@ class PopupMenu: UIView {
     /**
      可见的最大行数 Default is 5;
      */
-    var maxVisibleCount : NSInteger = 5
+    public var maxVisibleCount : NSInteger = 5
     
     
     /**
      menu背景色 Default is WhiteColor
      */
-    var backColor : UIColor = UIColor.white
+    public var backColor : UIColor = UIColor.white
     
     
     /**
      item的高度 Default is 44;
      */
-    var itemHeight : CGFloat = 44{
+    public var itemHeight : CGFloat = 44{
         didSet{
             tableView.rowHeight = itemHeight
             updateUI()
@@ -186,7 +186,7 @@ class PopupMenu: UIView {
     /**
      设置显示模式 Default is YBPopupMenuTypeDefault
      */
-    var type : PopupMenuType = PopupMenuType.defaultWhite {
+    public var type : PopupMenuType = PopupMenuType.defaultWhite {
         
         didSet{
             switch type {
@@ -206,7 +206,7 @@ class PopupMenu: UIView {
     /**
      代理
      */
-    open weak var delegate : PopupMenuDelegate?
+     weak var delegate : PopupMenuDelegate?
     
     
     // MARK: Private properties
@@ -220,7 +220,7 @@ class PopupMenu: UIView {
     }
     
 
-    override var frame: CGRect{
+    override open var frame: CGRect{
         didSet {
             if arrowDirection == .top {
                 tableView.frame = CGRect.init(x: borderWidth, y: borderWidth + arrowHeight, width: frame.size.width - borderWidth * 2, height: frame.size.height - arrowHeight)
@@ -261,7 +261,7 @@ class PopupMenu: UIView {
         setDefaultSettings()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     func setDefaultSettings() {
@@ -686,7 +686,7 @@ class PopupMenu: UIView {
         frame = originRect
     }
     
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         super.draw(rect)
 
         let bezierPath = PopupMenuPath.bezierPathWithRect(myRect: rect, rectCorner: self.rectCorner, cornerRadius: cornerRadius, borderWidth: borderWidth, borderColor: borderColor, backgroundColor: backColor, arrowWidth: arrowWidth, arrowHeight: arrowHeight, myArrowPosition: arrowPosition, arrowDirection: arrowDirection)
@@ -697,12 +697,12 @@ class PopupMenu: UIView {
 
 // MARK: -ScrollViewDelegate
 extension PopupMenu {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         let cell : PopupMenuCell = getLastVisibleCell()
         cell.isShowSeparator = true
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let cell : PopupMenuCell = getLastVisibleCell()
         cell.isShowSeparator = false
     }
@@ -720,11 +720,11 @@ extension PopupMenu {
 fileprivate let identifier = "popupMenu"
 extension PopupMenu : UITableViewDelegate,UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titles.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? PopupMenuCell
         if cell == nil {
             cell = PopupMenuCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: identifier)
@@ -748,7 +748,7 @@ extension PopupMenu : UITableViewDelegate,UITableViewDataSource {
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if didSelectRow != nil {
             didSelectRow!(indexPath.row,titles[indexPath.row],self)

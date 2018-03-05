@@ -16,8 +16,39 @@
 		111DF7BB1F94580800848BD8 /* PopupMenuPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BA1F94580800848BD8 /* PopupMenuPath.swift */; };
 		111DF7BD1F94583D00848BD8 /* RectConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BC1F94583D00848BD8 /* RectConst.swift */; };
 		111DF7BF1F948F4100848BD8 /* PopupMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BE1F948F4100848BD8 /* PopupMenuCell.swift */; };
+		5878ED9D204DA19000431447 /* PopupMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 5878ED9B204DA19000431447 /* PopupMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5878EDA0204DA19000431447 /* PopupMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5878ED99204DA19000431447 /* PopupMenu.framework */; };
+		5878EDA1204DA19000431447 /* PopupMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5878ED99204DA19000431447 /* PopupMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5878EDA6204DA1A600431447 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7B81F9457DD00848BD8 /* PopupMenu.swift */; };
+		5878EDA7204DA1A600431447 /* PopupMenuPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BA1F94580800848BD8 /* PopupMenuPath.swift */; };
+		5878EDA8204DA1A600431447 /* RectConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BC1F94583D00848BD8 /* RectConst.swift */; };
+		5878EDA9204DA1A600431447 /* PopupMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BE1F948F4100848BD8 /* PopupMenuCell.swift */; };
 		58F7A6981F9B3CD200FA1511 /* FingerTipWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F7A6971F9B3C7200FA1511 /* FingerTipWindow.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5878ED9E204DA19000431447 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 111DF79A1F94573800848BD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5878ED98204DA19000431447;
+			remoteInfo = PopupMenu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5878EDA5204DA19000431447 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5878EDA1204DA19000431447 /* PopupMenu.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		111DF7A21F94573800848BD8 /* PopupMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,11 +62,22 @@
 		111DF7BA1F94580800848BD8 /* PopupMenuPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuPath.swift; sourceTree = "<group>"; };
 		111DF7BC1F94583D00848BD8 /* RectConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectConst.swift; sourceTree = "<group>"; };
 		111DF7BE1F948F4100848BD8 /* PopupMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMenuCell.swift; sourceTree = "<group>"; };
+		5878ED99204DA19000431447 /* PopupMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopupMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5878ED9B204DA19000431447 /* PopupMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupMenu.h; sourceTree = "<group>"; };
+		5878ED9C204DA19000431447 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F7A6971F9B3C7200FA1511 /* FingerTipWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingerTipWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		111DF79F1F94573800848BD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5878EDA0204DA19000431447 /* PopupMenu.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5878ED95204DA19000431447 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				111DF7A41F94573800848BD8 /* PopupMenuDemo */,
+				5878ED9A204DA19000431447 /* PopupMenu */,
 				111DF7A31F94573800848BD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				111DF7A21F94573800848BD8 /* PopupMenuDemo.app */,
+				5878ED99204DA19000431447 /* PopupMenu.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +131,15 @@
 			path = PopupMenu;
 			sourceTree = "<group>";
 		};
+		5878ED9A204DA19000431447 /* PopupMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5878ED9B204DA19000431447 /* PopupMenu.h */,
+				5878ED9C204DA19000431447 /* Info.plist */,
+			);
+			path = PopupMenu;
+			sourceTree = "<group>";
+		};
 		58F7A6961F9B3C5C00FA1511 /* FingerTipWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +150,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		5878ED96204DA19000431447 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5878ED9D204DA19000431447 /* PopupMenu.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		111DF7A11F94573800848BD8 /* PopupMenuDemo */ = {
 			isa = PBXNativeTarget;
@@ -105,15 +169,35 @@
 				111DF79E1F94573800848BD8 /* Sources */,
 				111DF79F1F94573800848BD8 /* Frameworks */,
 				111DF7A01F94573800848BD8 /* Resources */,
+				5878EDA5204DA19000431447 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5878ED9F204DA19000431447 /* PBXTargetDependency */,
 			);
 			name = PopupMenuDemo;
 			productName = PopupMenuDemo;
 			productReference = 111DF7A21F94573800848BD8 /* PopupMenuDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5878ED98204DA19000431447 /* PopupMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5878EDA4204DA19000431447 /* Build configuration list for PBXNativeTarget "PopupMenu" */;
+			buildPhases = (
+				5878ED94204DA19000431447 /* Sources */,
+				5878ED95204DA19000431447 /* Frameworks */,
+				5878ED96204DA19000431447 /* Headers */,
+				5878ED97204DA19000431447 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopupMenu;
+			productName = PopupMenu;
+			productReference = 5878ED99204DA19000431447 /* PopupMenu.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -127,6 +211,10 @@
 				TargetAttributes = {
 					111DF7A11F94573800848BD8 = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					5878ED98204DA19000431447 = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,6 +233,7 @@
 			projectRoot = "";
 			targets = (
 				111DF7A11F94573800848BD8 /* PopupMenuDemo */,
+				5878ED98204DA19000431447 /* PopupMenu */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +246,13 @@
 				111DF7B01F94573800848BD8 /* LaunchScreen.storyboard in Resources */,
 				111DF7AD1F94573800848BD8 /* Assets.xcassets in Resources */,
 				111DF7AB1F94573800848BD8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5878ED97204DA19000431447 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +273,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5878ED94204DA19000431447 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5878EDA6204DA1A600431447 /* PopupMenu.swift in Sources */,
+				5878EDA7204DA1A600431447 /* PopupMenuPath.swift in Sources */,
+				5878EDA8204DA1A600431447 /* RectConst.swift in Sources */,
+				5878EDA9204DA1A600431447 /* PopupMenuCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5878ED9F204DA19000431447 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5878ED98204DA19000431447 /* PopupMenu */;
+			targetProxy = 5878ED9E204DA19000431447 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		111DF7A91F94573800848BD8 /* Main.storyboard */ = {
@@ -309,6 +424,7 @@
 		111DF7B51F94573800848BD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45S7UXYXC7;
@@ -325,6 +441,7 @@
 		111DF7B61F94573800848BD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45S7UXYXC7;
@@ -335,6 +452,56 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5878EDA2204DA19000431447 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 45S7UXYXC7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PopupMenu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lidongxi.PopupMenu;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5878EDA3204DA19000431447 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 45S7UXYXC7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PopupMenu/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lidongxi.PopupMenu;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -355,6 +522,15 @@
 			buildConfigurations = (
 				111DF7B51F94573800848BD8 /* Debug */,
 				111DF7B61F94573800848BD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5878EDA4204DA19000431447 /* Build configuration list for PBXNativeTarget "PopupMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5878EDA2204DA19000431447 /* Debug */,
+				5878EDA3204DA19000431447 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

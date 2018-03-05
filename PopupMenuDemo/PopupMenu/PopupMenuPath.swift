@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PopupMenuArrowDirection : Int {
+public enum PopupMenuArrowDirection : Int {
     case top = 0 //箭头朝上
     case bottom
     case left
