@@ -9,6 +9,11 @@ PopupMenu is a small library (four class) meant for presentations from iOS devic
 
 ### Usage
 
+###carthage support
+```Objective
+github "dongxiexidu/PopupMenu"
+```
+
 #### example one use delegate
 ```objc
 
