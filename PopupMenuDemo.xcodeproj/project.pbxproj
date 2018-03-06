@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111B962D204E2CFF00E25130 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7B81F9457DD00848BD8 /* PopupMenu.swift */; };
+		111B962E204E2CFF00E25130 /* PopupMenuPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BA1F94580800848BD8 /* PopupMenuPath.swift */; };
+		111B962F204E2CFF00E25130 /* RectConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BC1F94583D00848BD8 /* RectConst.swift */; };
+		111B9630204E2CFF00E25130 /* PopupMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BE1F948F4100848BD8 /* PopupMenuCell.swift */; };
 		111DF7A61F94573800848BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7A51F94573800848BD8 /* AppDelegate.swift */; };
 		111DF7A81F94573800848BD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7A71F94573800848BD8 /* ViewController.swift */; };
 		111DF7AB1F94573800848BD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111DF7A91F94573800848BD8 /* Main.storyboard */; };
@@ -19,10 +23,6 @@
 		5878ED9D204DA19000431447 /* PopupMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 5878ED9B204DA19000431447 /* PopupMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5878EDA0204DA19000431447 /* PopupMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5878ED99204DA19000431447 /* PopupMenu.framework */; };
 		5878EDA1204DA19000431447 /* PopupMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5878ED99204DA19000431447 /* PopupMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5878EDA6204DA1A600431447 /* PopupMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7B81F9457DD00848BD8 /* PopupMenu.swift */; };
-		5878EDA7204DA1A600431447 /* PopupMenuPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BA1F94580800848BD8 /* PopupMenuPath.swift */; };
-		5878EDA8204DA1A600431447 /* RectConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BC1F94583D00848BD8 /* RectConst.swift */; };
-		5878EDA9204DA1A600431447 /* PopupMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF7BE1F948F4100848BD8 /* PopupMenuCell.swift */; };
 		58F7A6981F9B3CD200FA1511 /* FingerTipWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F7A6971F9B3C7200FA1511 /* FingerTipWindow.swift */; };
 /* End PBXBuildFile section */
 
@@ -277,10 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5878EDA6204DA1A600431447 /* PopupMenu.swift in Sources */,
-				5878EDA7204DA1A600431447 /* PopupMenuPath.swift in Sources */,
-				5878EDA8204DA1A600431447 /* RectConst.swift in Sources */,
-				5878EDA9204DA1A600431447 /* PopupMenuCell.swift in Sources */,
+				111B962D204E2CFF00E25130 /* PopupMenu.swift in Sources */,
+				111B962E204E2CFF00E25130 /* PopupMenuPath.swift in Sources */,
+				111B962F204E2CFF00E25130 /* RectConst.swift in Sources */,
+				111B9630204E2CFF00E25130 /* PopupMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
