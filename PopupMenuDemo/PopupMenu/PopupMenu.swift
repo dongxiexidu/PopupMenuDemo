@@ -34,7 +34,7 @@ public enum PopupMenuPriorityDirection : Int {
    @objc optional func popupMenudidShow()
 }
 
-public class PopupMenu: UIView {
+open class PopupMenu: UIView {
     
     
     /// 点击选中回调
