@@ -64,6 +64,6 @@ github "dongxiexidu/PopupMenu"
         }
 ```
 
-![](demo.gif)
+![效果图](https://github.com/dongxiexidu/PopupMenuDemo/blob/master/screenDemo.gif)
 
 [Objective-C version](https://github.com/lyb5834/YBPopupMenu)
