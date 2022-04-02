@@ -18,7 +18,7 @@ public enum PopupMenuArrowDirection : Int {
 
 class PopupMenuPath {
     
-   open static func maskLayerWithRect(rect : CGRect,
+    public static func maskLayerWithRect(rect : CGRect,
                            rectCorner : UIRectCorner,
                            cornerRadius : CGFloat,
                            arrowWidth : CGFloat,
@@ -31,7 +31,7 @@ class PopupMenuPath {
         return shapeLayer
     }
     
-    open static  func bezierPathWithRect(myRect : CGRect,
+    public static  func bezierPathWithRect(myRect : CGRect,
                             rectCorner : UIRectCorner,
                             cornerRadius : CGFloat,
                             borderWidth : CGFloat,

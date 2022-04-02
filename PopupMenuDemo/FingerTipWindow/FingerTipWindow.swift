@@ -71,14 +71,14 @@ class FingerTipWindow: UIWindow {
     
     func fingerTipWindow_commonInit() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(screenConnect), name: NSNotification.Name.UIScreenDidConnect, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(screenDisconnect), name: NSNotification.Name.UIScreenDidDisconnect, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(screenConnect), name: UIScreen.didConnectNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(screenDisconnect), name: UIScreen.didDisconnectNotification, object: nil)
         updateFingertipsAreActive()
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIScreenDidConnect, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIScreenDidDisconnect, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIScreen.didConnectNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIScreen.didDisconnectNotification, object: nil)
     }
    
      // MARK: Screen notifications
@@ -121,7 +121,7 @@ class FingerTipWindow: UIWindow {
     lazy var overlayWindow: UIWindow = {
         let overlayWindow = UIWindow.init(frame: self.frame)
         overlayWindow.isUserInteractionEnabled = false
-        overlayWindow.windowLevel = UIWindowLevelStatusBar
+        overlayWindow.windowLevel = UIWindow.Level.statusBar
         overlayWindow.backgroundColor = UIColor.clear
         overlayWindow.isHidden = false
         return overlayWindow
@@ -160,6 +160,14 @@ class FingerTipWindow: UIWindow {
            
                 case .ended,.cancelled:
                     removeFingerTipWithHash(hash: touch.hash, animated: true)
+                case .regionEntered:
+                    break
+                case .regionMoved:
+                    break
+                case .regionExited:
+                    break
+                @unknown default:
+                    break
                 }
             }
         }

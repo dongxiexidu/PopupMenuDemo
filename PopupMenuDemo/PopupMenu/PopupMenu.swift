@@ -247,7 +247,7 @@ open class PopupMenu: UIView {
     var separatorColor : UIColor!
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView.init(frame: CGRect.zero, style: UITableViewStyle.plain)
+        let tableView = UITableView.init(frame: CGRect.zero, style: UITableView.Style.plain)
         tableView.backgroundColor = UIColor.clear
         tableView.tableFooterView = UIView()
         tableView.delegate = self
@@ -312,7 +312,8 @@ open class PopupMenu: UIView {
      @param itemWidth 菜单宽度
      @param delegate  代理
      */
-    open static func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, delegate : PopupMenuDelegate) -> PopupMenu {
+    @discardableResult
+    public static func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, delegate : PopupMenuDelegate) -> PopupMenu {
         let popupMenu = PopupMenu.init()
         popupMenu.point = point
         popupMenu.titles = titles
@@ -335,7 +336,8 @@ open class PopupMenu: UIView {
      @param delegate  代理
      @param otherSetting   其他设置
      */
-   static open func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat,delegate : PopupMenuDelegate,otherSettings : (PopupMenu)->() ) -> PopupMenu {
+    @discardableResult
+    static public func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat,delegate : PopupMenuDelegate,otherSettings : (PopupMenu)->() ) -> PopupMenu {
         let popupMenu = PopupMenu.init()
         popupMenu.point = point
         popupMenu.titles = titles
@@ -363,7 +365,8 @@ open class PopupMenu: UIView {
      @param didSelectRow   点击cell回调block
      @param otherSetting   其他设置
      */
-    static open func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, didSelectRow : @escaping ((NSInteger,String,PopupMenu)->()), otherSettings : (PopupMenu)->() ) -> PopupMenu {
+    @discardableResult
+    static public func showAtPoint(point : CGPoint,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, didSelectRow : @escaping ((NSInteger,String,PopupMenu)->()), otherSettings : (PopupMenu)->() ) -> PopupMenu {
         
         let popupMenu = PopupMenu.init()
         popupMenu.didSelectRow = didSelectRow
@@ -389,7 +392,8 @@ open class PopupMenu: UIView {
      @param itemWidth 菜单宽度
      @param delegate  代理
      */
-    open static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, delegate : PopupMenuDelegate ) -> PopupMenu {
+    @discardableResult
+    public static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, delegate : PopupMenuDelegate ) -> PopupMenu {
         
         let absoluteRect = view.convert(view.bounds, to: mainWindow)
         let relyPoint = CGPoint.init(x: absoluteRect.origin.x + absoluteRect.size.width / 2, y: absoluteRect.origin.y + absoluteRect.size.height)
@@ -417,8 +421,8 @@ open class PopupMenu: UIView {
      @param didSelectRow   点击cell回调block
      @param otherSetting   其他设置
      */
-    
-    open static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, didSelectRow : @escaping ((NSInteger,String,PopupMenu)->()), otherSettings : (PopupMenu)->()) -> PopupMenu {
+    @discardableResult
+    public static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat, didSelectRow : @escaping ((NSInteger,String,PopupMenu)->()), otherSettings : (PopupMenu)->()) -> PopupMenu {
         
         let absoluteRect = view.convert(view.bounds, to: mainWindow)
         let relyPoint = CGPoint.init(x: absoluteRect.origin.x + absoluteRect.size.width / 2, y: absoluteRect.origin.y + absoluteRect.size.height/2)
@@ -447,7 +451,8 @@ open class PopupMenu: UIView {
      @param delegate  代理
      @param otherSetting   其他设置
      */
-    open static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat,delegate : PopupMenuDelegate, otherSettings : (PopupMenu)->()  ) -> PopupMenu {
+    @discardableResult
+    public static func showRelyOnView(view : UIView,titles : Array<String>, icons: Array<String>?,menuWidth itemWidth : CGFloat,delegate : PopupMenuDelegate, otherSettings : (PopupMenu)->()  ) -> PopupMenu {
 
         let absoluteRect = view.convert(view.bounds, to: mainWindow)
         let relyPoint = CGPoint.init(x: absoluteRect.origin.x + absoluteRect.size.width / 2, y: absoluteRect.origin.y + absoluteRect.size.height/2)
@@ -727,7 +732,7 @@ extension PopupMenu : UITableViewDelegate,UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? PopupMenuCell
         if cell == nil {
-            cell = PopupMenuCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: identifier)
+            cell = PopupMenuCell.init(style: UITableViewCell.CellStyle.value1, reuseIdentifier: identifier)
             cell?.textLabel?.numberOfLines = 0
         }
         cell!.backgroundColor = UIColor.clear
