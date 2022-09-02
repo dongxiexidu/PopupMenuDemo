@@ -15,30 +15,28 @@ github "dongxiexidu/PopupMenuDemo"
 ```
 
 #### example one use delegate
-```objc
+```swift
+var popupMenu : PopupMenu?
+let TITLES = ["修改", "删除", "扫一扫","付款"]
+let ICONS = ["motify","delete","saoyisao","pay"]
 
-    var popupMenu : PopupMenu?
-    let TITLES = ["修改", "删除", "扫一扫","付款"]
-    let ICONS = ["motify","delete","saoyisao","pay"]
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesBegan(touches, with: event)
+    
+    let touch = (touches as NSSet).anyObject() as! UITouch
+    let point = touch.location(in: self.view)
+    
+    popupMenu = PopupMenu.showAtPoint(point: point, titles: TITLES, icons: nil, menuWidth: 110, delegate: self, otherSettings: { (popupMenu) in
+        popupMenu.dismissOnSelected = false
+        popupMenu.isShowShadow = true
+        popupMenu.offset = 10
+        popupMenu.type = PopupMenuType.dark
+        popupMenu.rectCorner = UIRectCorner.allCorners
+        popupMenu.priorityDirection = .none
+    })
+}
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        let touch = (touches as NSSet).anyObject() as! UITouch
-        let point = touch.location(in: self.view)
-        
-        popupMenu = PopupMenu.showAtPoint(point: point, titles: TITLES, icons: nil, menuWidth: 110, delegate: self, otherSettings: { (popupMenu) in
-            popupMenu.dismissOnSelected = false
-            popupMenu.isShowShadow = true
-            popupMenu.offset = 10
-            popupMenu.type = PopupMenuType.dark
-            popupMenu.rectCorner = UIRectCorner.allCorners
-            popupMenu.priorityDirection = .none
-        })
-    }
-    
-    extension ViewController : PopupMenuDelegate{
-    
+extension ViewController : PopupMenuDelegate{
     func popupMenuDidSelected(index: NSInteger, popupMenu: PopupMenu) {
         if popupMenu.tag == 111 {
             print(["111","222","333","444","555","666","777","888"][index])
@@ -51,17 +49,17 @@ github "dongxiexidu/PopupMenuDemo"
 
 #### example two use block
 
-```objc
-        PopupMenu.showRelyOnView(view: sender as! UIView, titles: TITLES, icons: ICONS, menuWidth: 120, didSelectRow: { (index, value, popupMenu) in
-            print("索引是: \(index)值是: \(value)")
-        }) { (popupMenu) in
-            popupMenu.backColor = UIColor.lightGray
-            popupMenu.separatorColor = UIColor.white
-            popupMenu.priorityDirection = PopupMenuPriorityDirection.none
-            popupMenu.borderWidth = 1
-            popupMenu.borderColor = UIColor.red
-            popupMenu.rectCorner = [.bottomRight,.bottomLeft]
-        }
+```swift
+PopupMenu.showRelyOnView(view: sender as! UIView, titles: TITLES, icons: ICONS, menuWidth: 120, didSelectRow: { (index, value, popupMenu) in
+    print("索引是: \(index)值是: \(value)")
+}) { (popupMenu) in
+    popupMenu.backColor = UIColor.lightGray
+    popupMenu.separatorColor = UIColor.white
+    popupMenu.priorityDirection = PopupMenuPriorityDirection.none
+    popupMenu.borderWidth = 1
+    popupMenu.borderColor = UIColor.red
+    popupMenu.rectCorner = [.bottomRight,.bottomLeft]
+}
 ```
 
 ![效果图](https://github.com/dongxiexidu/PopupMenuDemo/blob/master/screenDemo.gif)
